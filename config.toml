@@ -1,7 +1,7 @@
 baseURL = "https://ehsandar.top/"
 
 # Change the default theme to be use when building the site with Hugo
-theme = "LoveIt"
+theme = "PaperMod"
 
 # website title
 title = "Amir's Blog"
@@ -13,8 +13,8 @@ languageName = "English"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = false
 
-# default amount of posts in each pages
-paginate = 12
+[pagination]
+pagerSize = 12
 # google analytics code [UA-XXXXXXXX-X]
 googleAnalytics = "G-G7S4PFDMT3"
 # copyright description used only for seo schema
@@ -29,12 +29,6 @@ enableEmoji = true
 
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
-
-# Author config
-[author]
-name = "Amir Ehsandar"
-email = "ehsandaramir@gmail.com"
-link = "mailto:ehsandaramir@gmail.com"
 
 # Menu config
 [menu]
@@ -82,6 +76,11 @@ title = "Amir's Blog"
 description = "Amir Ehsandar's Blog"
 # website images for Open Graph and Twitter Cards
 images = ["/logo.png"]
+
+[params.author]
+name = "Amir Ehsandar"
+email = "ehsandaramir@gmail.com"
+link = "mailto:ehsandaramir@gmail.com"
 
 # Header config
 [params.header]
@@ -617,4 +616,3 @@ home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "MarkDown"]
 section = ["HTML", "RSS"]
 taxonomy = ["HTML", "RSS"]
-taxonomyTerm = ["HTML"]
