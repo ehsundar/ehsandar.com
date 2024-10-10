@@ -4,7 +4,7 @@ baseURL = "https://ehsandar.top/"
 theme = "LoveIt"
 
 # website title
-title = "Amir Ehsandar"
+title = "Amir's Blog"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -73,13 +73,13 @@ defaultTheme = "auto"
 gitRepo = "https://github.com/ehsundar/ehsandar.com"
 #  which hash function used for SRI, when empty, no SRI is used
 # ["sha256", "sha384", "sha512", "md5"]
-fingerprint = "sha256"
+fingerprint = ""
 #  date format
 dateFormat = "2006-01-02"
 # website title for Open Graph and Twitter Cards
-title = "Amir Ehsandar"
+title = "Amir's Blog"
 # website description for RSS, SEO, Open Graph and Twitter Cards
-description = "personal blog written by Amir Ehsandar"
+description = "Amir Ehsandar's Blog"
 # website images for Open Graph and Twitter Cards
 images = ["/logo.png"]
 
@@ -617,3 +617,4 @@ home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "MarkDown"]
 section = ["HTML", "RSS"]
 taxonomy = ["HTML", "RSS"]
+taxonomyTerm = ["HTML"]

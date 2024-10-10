@@ -1,3 +1,3 @@
 #! /bin/bash
 
-rsync -avz public/ htz:/var/www/ehsandar.top/public/
+rsync -avz . htz:/root/ehsandar.com
