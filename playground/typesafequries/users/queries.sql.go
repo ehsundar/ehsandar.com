@@ -20,8 +20,8 @@ type CreateUserParams struct {
 	Age  int32
 }
 
-func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, error) {
-	row := q.db.QueryRow(ctx, createUser, arg.Name, arg.Age)
+func (q *Queries) CreateUser(ctx context.Context, db DBTX, arg CreateUserParams) (User, error) {
+	row := db.QueryRow(ctx, createUser, arg.Name, arg.Age)
 	var i User
 	err := row.Scan(&i.ID, &i.Name, &i.Age)
 	return i, err
