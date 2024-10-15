@@ -5,7 +5,7 @@
 package users
 
 type User struct {
-	ID   int32
-	Name string
-	Age  int32
+	ID   int32  `json:"id"`
+	Name string `json:"name"`
+	Age  int32  `json:"age"`
 }

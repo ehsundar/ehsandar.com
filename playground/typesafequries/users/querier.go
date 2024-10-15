@@ -9,7 +9,7 @@ import (
 )
 
 type Querier interface {
-	CreateUser(ctx context.Context, db DBTX, arg CreateUserParams) (User, error)
+	CreateUser(ctx context.Context, db DBTX, name string, age int32) (User, error)
 }
 
 var _ Querier = (*Queries)(nil)

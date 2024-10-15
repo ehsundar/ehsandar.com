@@ -15,13 +15,8 @@ values ($1, $2)
 returning id, name, age
 `
 
-type CreateUserParams struct {
-	Name string
-	Age  int32
-}
-
-func (q *Queries) CreateUser(ctx context.Context, db DBTX, arg CreateUserParams) (User, error) {
-	row := db.QueryRow(ctx, createUser, arg.Name, arg.Age)
+func (q *Queries) CreateUser(ctx context.Context, db DBTX, name string, age int32) (User, error) {
+	row := db.QueryRow(ctx, createUser, name, age)
 	var i User
 	err := row.Scan(&i.ID, &i.Name, &i.Age)
 	return i, err

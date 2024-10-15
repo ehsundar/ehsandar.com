@@ -19,7 +19,7 @@ pools, CTEs and more.
 It takes SQL files as input alongside migration files and generates Go code that can be used to execute the queries.
 Let's continue with an example to understand how `sqlc` works.
 
-### SQLC Example
+### Code Generation
 
 Migration file: `migrations/000001_init.up.sql`
 
@@ -158,8 +158,8 @@ we need to mock specific SQL queries.
 
 ### Injecting `Querier` as a dependency
 
-Having `emit_methods_with_db_argument` option set in the `sqlc` configuration, 
-the generated methods also accept a `DBTX` interface which is the `pgxpool.Pool` instance in this case.
+Having `emit_methods_with_db_argument` [option](https://docs.sqlc.dev/en/stable/reference/config.html#go) set in the configuration, 
+the generated methods also accept a `DBTX` interface which is a `pgxpool.Pool` instance in this case.
 
 ```go
 type Querier interface {
@@ -187,11 +187,7 @@ func NewServer(
 
 It's worth mentioning that generating mocks is possible with [the mockery](https://github.com/vektra/mockery).
 
-### Generating readable code
-
-- Using the option 
-
-### Side notes on scaling and error handling
+## Notes on Scaling and Error Handling
 
 - It's always good to have a transaction deferred rollback in case of an error. 
 Even if all the error scenarios are covered at the moment, future changes might introduce security vulnerabilities.
@@ -231,3 +227,14 @@ user, err := q.CreateUser(queryCtx, pool, users.CreateUserParams{
 - Failure scenarios should be handled properly.
 A degraded response is better than a 5xx error.
 
+## Common Scenarios and Suitable Workarounds
+
+### Interface Segregation / Package Separation
+
+### Repetitive Models
+
+### DTOs and Transforms
+
+### CTEs
+
+### Enums
