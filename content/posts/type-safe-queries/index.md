@@ -2,11 +2,12 @@
 title: "Type Safe Queries in Go"
 date: 2024-10-11T02:45:44+03:30
 draft: false
+
+ShowToc: true
+TocOpen: true
 ---
 
-# Type-Safe Queries in Go
-
-In this post, we will discuss how to write type-safe queries in Go. We will use the `sqlc` tool to generate Go code from
+In this article, we will discuss how to write type-safe queries in Go. We will use the `sqlc` tool to generate Go code from
 SQL queries. This will allow us to write type-safe queries in Go.
 The main advantage of using `sqlc` is that there cannot be any runtime errors due to type mismatches in the queries as
 the parameters and returned row types are determined during the compile time.
