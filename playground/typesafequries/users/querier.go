@@ -10,6 +10,7 @@ import (
 
 type Querier interface {
 	CreateUser(ctx context.Context, db DBTX, name string, age int32) (User, error)
+	GetItems(ctx context.Context, db DBTX) ([]Item, error)
 }
 
 var _ Querier = (*Queries)(nil)

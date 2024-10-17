@@ -4,7 +4,7 @@ baseURL = "https://ehsundar.github.io/ehsandar.com"
 theme = "PaperMod"
 
 # website title
-title = "Amir's Blog"
+title = "Amir Ehsandar"
 
 # language code ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "en"
@@ -63,7 +63,7 @@ title = ""
 
 [params]
 # site default theme ["auto", "light", "dark"]
-defaultTheme = "auto"
+defaultTheme = "light"
 # public git repo url only then enableGitInfo is true
 gitRepo = "https://github.com/ehsundar/ehsandar.com"
 #  which hash function used for SRI, when empty, no SRI is used
