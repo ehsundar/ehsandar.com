@@ -20,6 +20,7 @@ params:
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowToc: true
+  hideFooter: true
 
   homeInfoParams:
     enabled: true
