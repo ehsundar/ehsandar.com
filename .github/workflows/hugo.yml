@@ -29,6 +29,7 @@ defaults:
 jobs:
   # Build job
   build:
+    environment: "production"
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.135.0
@@ -48,7 +49,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Build with Hugo
+      - name: Build with Hugo for Pages
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
@@ -60,6 +61,23 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: Build with Hugo for Pages
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --minify
+      - name: Upload to server with SSH
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "public/*"
+          target: "/var/www/ehsandar.top/"
+          rm: true
 
   # Deployment job
   deploy:
