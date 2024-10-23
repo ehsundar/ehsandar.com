@@ -29,6 +29,9 @@ params:
     imageTitle: my image
 
   socialIcons:
+    - name: email
+      title: Email
+      url: "mailto:ehsandaramir@gmail.com"
     - name: github
       title: GitHub
       url: "https://github.com/ehsundar"
